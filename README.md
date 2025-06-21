@@ -35,7 +35,7 @@ npm install -g typescript
 Simply run the command to launch the interactive menu:
 
 ```bash
-tsc && node dist/index.js
+npm start
 ```
 
 ## Technical Details
