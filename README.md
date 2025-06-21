@@ -2,6 +2,8 @@
 
 An interactive command-line todo application built with TypeScript, featuring a menu-driven interface powered by inquirer.js and lightweight database storage with lowdb.
 
+_Built following the book "Essential TypeScript" by Adam Freeman._
+
 ## Features
 
 - 🎯 Interactive menu-driven interface
