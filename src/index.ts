@@ -11,14 +11,14 @@ let todos: TodoItem[] = [
 ];
 
 let collection: TodoCollection = new JsonTodoCollection("Giorgi", todos);
-let showComleted = true;
+let showCompleted = true;
 
 function displayTodoList(): void {
   console.log(
     `${collection.userName}'s Todo List ` +
       `(${collection.getItemCounts().incomplete} items to do)`
   );
-  collection.getTodoItems(showComleted).forEach((item) => item.printDetails());
+  collection.getTodoItems(showCompleted).forEach((item) => item.printDetails());
 }
 
 enum Commands {
@@ -54,7 +54,7 @@ function promptComplete(): void {
       type: "checkbox",
       name: "complete",
       message: "Mark Tasks Complete",
-      choices: collection.getTodoItems(showComleted).map((item) => ({
+      choices: collection.getTodoItems(showCompleted).map((item) => ({
         name: item.task,
         value: item.id,
         checked: item.complete,
@@ -86,7 +86,7 @@ function promptUser(): void {
     .then((answers) => {
       switch (answers["command"]) {
         case Commands.Toggle: {
-          showComleted = !showComleted;
+          showCompleted = !showCompleted;
           promptUser();
           break;
         }
